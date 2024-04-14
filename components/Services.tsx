@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const Services: React.FC<{ data: any }> = ({ data }) => {
     const { title, service_cards } = data;
-    console.log(data);
+
     return (
         <section className="pb-32 pt-24">
             <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
@@ -22,7 +22,7 @@ export default Services;
 
 const ServiceCard: React.FC<{ data: any }> = ({ data }) => {
     const { title, subtitle, description, cta_button_text, cta_button_link } = data;
-    console.log(data);
+
     return (
         <>
             <div className="flex flex-col p-6 lg:mx-1 sm:mx-auto max-w-lg text-center rounded-lg border shadow border-gray-600 xl:p-8 text-white bg-neutral-800">

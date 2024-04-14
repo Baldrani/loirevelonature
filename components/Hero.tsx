@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero: React.FC<{ data: any }> = ({ data }) => {
     const { title, description, cta_button_text, picture } = data;
-    console.log(data);
+
     return (
         <>
             <Container>

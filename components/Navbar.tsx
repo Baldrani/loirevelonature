@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FC } from "react";
+import LangSwitcher from "./LangSwitcher";
 
 type TNavSection = {
     title: string;
@@ -23,8 +24,7 @@ const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
                 </div>
 
                 <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-                    <Link href="/fi">Suomeksi</Link>
-                    <Link href="/en">In English</Link>
+                    <LangSwitcher />
                     <Link href="#contact" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
                         {cta_button_text}
                     </Link>

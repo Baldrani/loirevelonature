@@ -12,7 +12,6 @@ const SwitchLang: React.FC = () => {
 };
 
 const Header: React.FC<{ data: unknown }> = ({ data }) => {
-    console.log(data);
     return (
         <header className="sm:flex sm:justify-between py-3 px-4 border-b">
             <Container>
