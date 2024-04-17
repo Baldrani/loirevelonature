@@ -20,19 +20,25 @@ const Services: React.FC<{ data: any }> = ({ data }) => {
 
 export default Services;
 
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+
 const ServiceCard: React.FC<{ data: any }> = ({ data }) => {
     const { title, subtitle, description, cta_button_text, cta_button_link } = data;
 
     return (
-        <>
-            <div className="flex flex-col p-6 lg:mx-1 sm:mx-auto max-w-lg text-center rounded-lg border shadow border-gray-600 xl:p-8 text-white bg-neutral-800">
-                <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
-                <p className="font-light text-xl text-gray-400">{subtitle}</p>
-                <p className="text-xl mt-4">{description}</p>
-                <Link className="mr-2 text-5xl font-extrabold" href={cta_button_link}>
-                    <Button className="flex justify-center my-8">{cta_button_text}</Button>
-                </Link>
-            </div>
-        </>
+        <Card className="sm:col-span-2">
+            <CardHeader className="pb-3">
+                <CardTitle>{title}</CardTitle>
+                <CardDescription className="max-w-lg text-balance leading-relaxed">{subtitle}</CardDescription>
+            </CardHeader>
+            <CardContent>{description}</CardContent>
+            <CardFooter>
+                {cta_button_link && (
+                    <Link className="mr-2 text-5xl font-extrabold" href={cta_button_link}>
+                        <Button className="flex justify-center my-8">{cta_button_text}</Button>
+                    </Link>
+                )}
+            </CardFooter>
+        </Card>
     );
 };

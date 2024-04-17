@@ -3,6 +3,7 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui/button";
 
 const LangSwitcher: React.FC = () => {
     interface Option {
@@ -28,8 +29,8 @@ const LangSwitcher: React.FC = () => {
     return (
         <div className="flex items-center justify-center">
             <div className="relative text-lg w-48">
-                <button
-                    className=" justify-between w-full border border-gray-500 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                <Button
+                    // className=" justify-between w-full border border-gray-500 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     onClick={() => setIsOptionsExpanded(!isOptionsExpanded)}
                     onBlur={() => setIsOptionsExpanded(false)}
                 >
@@ -42,7 +43,7 @@ const LangSwitcher: React.FC = () => {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
-                </button>
+                </Button>
                 <div
                     className={`transition-transform duration-500 ease-custom ${
                         !isOptionsExpanded ? "-translate-y-1/2 scale-y-0 opacity-0" : "translate-y-0 scale-y-100 opacity-100"

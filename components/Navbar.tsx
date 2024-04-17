@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { FC } from "react";
 import LangSwitcher from "./LangSwitcher";
+import Container from "./ui/container";
+import { Button } from "./ui/button";
 
 type TNavSection = {
     title: string;
@@ -13,24 +15,21 @@ const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
     const { title, cta_button_text } = data;
 
     return (
-        <div className="w-full bg-black">
-            <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
-                <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                    <Link href="/">
-                        <span className="flex items-center space-x-2 text-2xl font-medium text-gray-100">
-                            <span>{title}</span>
-                        </span>
-                    </Link>
+        <header className="sm:flex sm:justify-between py-3 px-4 border-b">
+            <Container>
+                <div className="relative px-4 sm:px6 lg:px-8 flex h-16 items-center justify-between w-full">
+                    <div className="flex items-center">
+                        <Link href="/" className="ml-4 lg:ml-0">
+                            <h1 className="text-xl">{title} NAME</h1>
+                        </Link>
+                    </div>
+                    <div className="flex space-x-3">
+                        <Button>{cta_button_text}</Button>
+                        <LangSwitcher />
+                    </div>
                 </div>
-
-                <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-                    <LangSwitcher />
-                    <Link href="#contact" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-                        {cta_button_text}
-                    </Link>
-                </div>
-            </nav>
-        </div>
+            </Container>
+        </header>
     );
 };
 
