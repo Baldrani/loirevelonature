@@ -17,6 +17,7 @@ const getLandingPage = async (lang: string) => {
     return {
         nav_section: nav_section[0],
         hero_section: hero_section[0],
+        loire_map_section: hero_section[1],
         services_section: services_section[0],
         testimonials_section: testimonials_section[0],
         footer_section: footer_section[0],
@@ -24,12 +25,12 @@ const getLandingPage = async (lang: string) => {
 };
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
-    const { nav_section, hero_section, services_section, testimonials_section, footer_section } = await getLandingPage(lang);
+    const { nav_section, hero_section, services_section, testimonials_section, footer_section, loire_map_section } = await getLandingPage(lang);
 
     return (
         <main>
             <Navbar data={nav_section} />
-            <Hero data={hero_section} />
+            <Hero data={hero_section} loire_map_section={loire_map_section} />
             <Services data={services_section} />
             <Testimonials data={testimonials_section} />
             <Footer data={footer_section} />

@@ -1,16 +1,19 @@
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import Container from "./ui/container";
 
 const Testimonials: React.FC<{ data: any }> = ({ data }) => {
     const { title, testimonial_cards } = data;
     return (
-        <section className="px-52 pt-24 pb-32">
-            <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
-            <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-2">
-                {testimonial_cards.map((t: any) => (
-                    <TestimonialCard data={t} key={t.name} />
-                ))}
-            </div>
+        <section>
+            <Container>
+                <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
+                <div className="grid gap-10 grid-cols-2 md:grid-cols-3">
+                    {testimonial_cards.map((t: any) => (
+                        <TestimonialCard data={t} key={t.name} />
+                    ))}
+                </div>
+            </Container>
         </section>
     );
 };

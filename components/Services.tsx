@@ -19,7 +19,7 @@ const Services: React.FC<{ data: any }> = ({ data }) => {
                 </div>
             </div> */}
             <div className="py-4 px-4 mx-auto max-w-screen-xl">
-                <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 place-items-center items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 xl:gap-10">
                     {service_cards.map((s: any) => (
                         <ServiceCard data={s} key={s.title} />
                     ))}
@@ -39,11 +39,13 @@ const ServiceCard: React.FC<{ data: any }> = ({ data }) => {
     const { title, subtitle, description, cta_button_text, cta_button_link, icon } = data;
 
     return (
-        <Card className="sm:col-span-2">
-            <CardHeader className="pb-3">
-                <Icon icon={icon?.icon} inline width={24} />
-                <CardTitle>{title}</CardTitle>
-                <CardDescription className="max-w-lg text-balance leading-relaxed">{subtitle}</CardDescription>
+        <Card>
+            <CardHeader className="pb-3 flex flex-row items-center space-x-3">
+                <Icon icon={icon?.icon} inline width={32} />
+                <div>
+                    <CardTitle className="mb-1">{title}</CardTitle>
+                    <CardDescription className="max-w-lg text-balance">{subtitle}</CardDescription>
+                </div>
             </CardHeader>
             <CardContent>{description}</CardContent>
             <CardFooter>
