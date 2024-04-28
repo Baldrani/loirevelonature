@@ -32,10 +32,9 @@ const LoireMap: React.FC<{ data: any }> = ({ data }) => {
 
     return (
         <div className="relative flex flex-col items-center">
-            {/* // SET H3 FONT */}
-            <h3 className="my-4">{title}</h3>
-            <Image src={image?.filename} alt={image?.alt} width={0} height={0} sizes="100vw" style={{ width: "90%", height: "150px" }} />
-            <p className="my-3">{subtitle}</p>
+            <h3 className="my-4 text-2xl">{title}</h3>
+            <Image src={image?.filename} alt={image?.alt} width={0} height={0} sizes="100vw" style={{ width: "90%", height: "150px", objectFit: "contain" }} />
+            <p className="my-3 text-gray-500">{subtitle}</p>
         </div>
     );
 };

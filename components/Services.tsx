@@ -30,7 +30,7 @@ const ServiceCard: React.FC<{ data: any }> = ({ data }) => {
     const { title, subtitle, description, cta_button_text, cta_button_link, icon } = data;
 
     return (
-        <Card>
+        <Card className="flex flex-col justify-between">
             <CardHeader className="pb-3 flex flex-row items-center space-x-3">
                 <Icon icon={icon?.icon} inline width={32} />
                 <div>
