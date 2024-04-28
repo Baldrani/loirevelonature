@@ -9,15 +9,6 @@ const Services: React.FC<{ data: any }> = ({ data }) => {
     return (
         <section className="pb-32 pt-24">
             <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
-            {/* <div className="w-full bg-gray-100 dark:bg-gray-900 py-20">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {service_cards.map((s: any) => (
-                            <ParallaxCard data={s} key={s.title} />
-                        ))}{" "}
-                    </div>
-                </div>
-            </div> */}
             <div className="py-4 px-4 mx-auto max-w-screen-xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 xl:gap-10">
                     {service_cards.map((s: any) => (

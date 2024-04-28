@@ -5,10 +5,10 @@ import Container from "./ui/container";
 const Testimonials: React.FC<{ data: any }> = ({ data }) => {
     const { title, testimonial_cards } = data;
     return (
-        <section>
+        <section className="md:w-9/12 m-auto">
             <Container>
                 <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
-                <div className="grid gap-10 grid-cols-2 md:grid-cols-3">
+                <div className="grid gap-10 grid-cols md:grid-cols-2">
                     {testimonial_cards.map((t: any) => (
                         <TestimonialCard data={t} key={t.name} />
                     ))}
