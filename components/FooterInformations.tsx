@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
 const FooterInformations: React.FC = () => {
     return (
@@ -13,14 +14,17 @@ const FooterInformations: React.FC = () => {
                         <p className="text-sm">SARL Rent a Bike - APE code 1234Z - RCS registration 123 456 789 - Establishment number 1A2B3/C</p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
+                        {/* @ts-ignore */}
                         <MailIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                         <p className="text-sm">info@rentabike.com</p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
+                        {/* @ts-ignore */}
                         <PhoneIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                         <p className="text-sm">+1 (555) 555-5555</p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
+                        {/* @ts-ignore */}
                         <LocateIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                         <p className="text-sm">123 Main St, Anytown USA 12345</p>
                     </div>
@@ -78,7 +82,7 @@ const FooterInformations: React.FC = () => {
     );
 };
 
-const LocateIcon: React.FC = props => {
+const LocateIcon: React.FC<PropsWithChildren> = props => {
     return (
         <svg
             {...props}
@@ -101,7 +105,7 @@ const LocateIcon: React.FC = props => {
     );
 };
 
-const MailIcon: React.FC<{ props: any }> = ({ props }) => {
+const MailIcon: React.FC<PropsWithChildren> = props => {
     return (
         <svg
             {...props}
@@ -121,7 +125,7 @@ const MailIcon: React.FC<{ props: any }> = ({ props }) => {
     );
 };
 
-const PhoneIcon: React.FC = props => {
+const PhoneIcon: React.FC<PropsWithChildren> = props => {
     return (
         <svg
             {...props}
