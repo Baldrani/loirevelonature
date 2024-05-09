@@ -68,7 +68,7 @@ const FooterInformations: React.FC = () => {
                 </nav>
             </div>
             <p className="text-center text-xs text-gray-500">
-                Made with 🩷 by <Link href="maelmayon.fr">Maël Mayon</Link>
+                Made with 🩷 by <Link href="http://www.maelmayon.fr">Maël Mayon</Link>
             </p>
         </footer>
     );

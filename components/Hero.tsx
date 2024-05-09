@@ -37,7 +37,7 @@ const Hero: React.FC<{ data: THeroSection; loire_map_section: any }> = ({ data, 
                                 </Link>
                                 <Link
                                     target="_blank"
-                                    href={cta_2_button_link.url}
+                                    href={`/${cta_2_button_link.url}`}
                                     className={`${buttonVariants({ variant: "outline", size: "lg" })} flex-1 bg-white/10 text-white`}
                                 >
                                     {cta_2_button_text}

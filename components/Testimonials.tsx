@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import Container from "./ui/container";
+import { Separator } from "./ui/separator";
 
 const Testimonials: React.FC<{ data: any }> = ({ data }) => {
     const { title, testimonial_cards } = data;
     return (
         <section className="md:w-9/12 m-auto py-8">
             <Container>
-                <h2 className="text-4xl font-bold text-center mb-20">{title}</h2>
+                <h3 className="text-4xl font-bold text-center mb-20">{title}</h3>
+                <audio src="/france-bleu-2019.aac" title="La Touraine qui réussit"></audio>
+                <Separator className="my-4" />
                 <div className="grid gap-10 grid-cols md:grid-cols-2">
                     {testimonial_cards.map((t: any) => (
                         <TestimonialCard data={t} key={t.name} />
