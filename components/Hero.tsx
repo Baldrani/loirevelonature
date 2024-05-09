@@ -1,27 +1,55 @@
 import Image from "next/image";
 import Container from "./ui/container";
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
-const Hero: React.FC<{ data: any; loire_map_section: any }> = ({ data, loire_map_section }) => {
-    const { title, description, cta_button_text, picture } = data;
+type THeroSection = {
+    title: string;
+    description: string;
+    picture: {
+        filename: string;
+    };
+    cta_1_button_text: string;
+    cta_1_button_link: {
+        url: string;
+    };
+    cta_2_button_text: string;
+    cta_2_button_link: {
+        url: string;
+    };
+};
+
+const Hero: React.FC<{ data: THeroSection; loire_map_section: any }> = ({ data, loire_map_section }) => {
+    const { title, description, cta_1_button_text, cta_1_button_link, cta_2_button_text, cta_2_button_link, picture } = data;
 
     return (
         <div>
-            <div className="bg-no-repeat bg-cover bg-center bg-fixed bg-parallax-50%" style={{ backgroundImage: `url(${picture.filename})` }}>
+            <div className="bg-no-repeat bg-cover bg-center bg-fixed bg-parallax-50% h-[50vh] flex items-center" style={{ backgroundImage: `url(${picture.filename})` }}>
                 <Container>
-                    <div className="flex items-center w-full lg:w-1/2 lg:px-10">
-                        <div className="max-w-2xl mb-8 pr-3">
-                            <h1 className="text-4xl font-bold leading-snug tracking-tight lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight text-white">{title}</h1>
-                            <p className="py-5 text-xl leading-normal lg:text-xl xl:text-2xl text-gray-300">{description}</p>
-                            <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
-                                <Link href="#contact" className="px-7 py-3 text-white text-xl bg-indigo-600 rounded-md">
-                                    {cta_button_text}
+                    <div className="flex items-center w-full lg:px-10 justify-center">
+                        <div className="mb-8 pr-3">
+                            <h1 className="text-center text-4xl font-bold leading-snug tracking-tight lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight text-white mb-4">
+                                {title}
+                            </h1>
+                            <div className="flex flex-col justify-center space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row w-10/12 m-auto">
+                                <Link target="_blank" href={cta_1_button_link.url} className={`${buttonVariants({ variant: "blue", size: "lg" })} flex-1`}>
+                                    {cta_1_button_text}
+                                </Link>
+                                <Link
+                                    target="_blank"
+                                    href={cta_2_button_link.url}
+                                    className={`${buttonVariants({ variant: "outline", size: "lg" })} flex-1 bg-white/10 text-white`}
+                                >
+                                    {cta_2_button_text}
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </Container>
             </div>
+            <Container>
+                <p className="py-5 text-center leading-normal lg:text-lg text-black/70">{description}</p>
+            </Container>
             <LoireMap data={loire_map_section} />
         </div>
     );

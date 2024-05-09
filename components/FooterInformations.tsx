@@ -4,33 +4,38 @@ import { PropsWithChildren } from "react";
 const FooterInformations: React.FC = () => {
     return (
         <footer className="bg-gray-100 dark:bg-gray-800 py-6">
-            <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] items-start gap-4 px-4 md:px-6">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-[2fr_1fr] items-start gap-4 px-4 md:px-6">
                 <div className="flex flex-col gap-2">
                     <Link className="font-semibold underline underline-offset-2" href="#">
-                        Rent a Bike
+                        Loire Vélo Nature
                     </Link>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">© 2024 Rent a Bike. All rights reserved.</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">© 2024 Loire Vélo Nature. All rights reserved.</div>
+
                     <div className="flex items-center gap-0.5 text-sm">
-                        <p className="text-sm">SARL Rent a Bike - APE code 1234Z - RCS registration 123 456 789 - Establishment number 1A2B3/C</p>
+                        <p className="text-sm">
+                            SARL ARAWAK production - 3 avenue du 11 novembre - 37130 BRÉHÉMONT - APE : 7721Z - 441 325 008 000 23 - RCS Tours - N° Etablissement APS : 03704ET0064
+                        </p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
                         {/* @ts-ignore */}
                         <MailIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                        <p className="text-sm">info@rentabike.com</p>
+                        <a href="mailto:contact@loirevelonature.com" className="text-sm">
+                            contact@loirevelonature.com
+                        </a>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
                         {/* @ts-ignore */}
                         <PhoneIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                        <p className="text-sm">+1 (555) 555-5555</p>
+                        <p className="text-sm">+33 (0)6 03 89 23 14</p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
                         {/* @ts-ignore */}
                         <LocateIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                        <p className="text-sm">123 Main St, Anytown USA 12345</p>
+                        <p className="text-sm">3 avenue du 11 Novembre, 37130 BREHEMONT</p>
                     </div>
                 </div>
                 <nav className="grid gap-4 md:justify-self-end lg:grid-cols-[repeat(4)] text-sm">
-                    <div className="flex flex-col gap-1">
+                    {/* <div className="flex flex-col gap-1">
                         <Link className="underline underline-offset-2" href="#">
                             Home
                         </Link>
@@ -43,7 +48,7 @@ const FooterInformations: React.FC = () => {
                         <Link className="underline underline-offset-2" href="#">
                             Contact us
                         </Link>
-                    </div>
+                    </div> */}
                     <div className="flex flex-col gap-1">
                         <Link className="underline underline-offset-2" href="#">
                             Terms & Conditions
@@ -57,27 +62,14 @@ const FooterInformations: React.FC = () => {
                             About us
                         </Link>
                         <Link className="underline underline-offset-2" href="#">
-                            Our team
-                        </Link>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <Link className="underline underline-offset-2" href="#">
                             FAQ
-                        </Link>
-                        <Link className="underline underline-offset-2" href="#">
-                            How it works
-                        </Link>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <Link className="underline underline-offset-2" href="#">
-                            Contact customer service
-                        </Link>
-                        <Link className="underline underline-offset-2" href="#">
-                            Contact sales
                         </Link>
                     </div>
                 </nav>
             </div>
+            <p className="text-center text-xs text-gray-500">
+                Made with 🩷 by <Link href="maelmayon.fr">Maël Mayon</Link>
+            </p>
         </footer>
     );
 };

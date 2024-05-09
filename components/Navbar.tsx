@@ -4,15 +4,18 @@ import Link from "next/link";
 import { FC } from "react";
 import LangSwitcher from "./LangSwitcher";
 import Container from "./ui/container";
-import { Button } from "./ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 type TNavSection = {
     title: string;
     cta_button_text: string;
+    cta_button_link: {
+        url: string;
+    };
 };
 
 const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
-    const { title, cta_button_text } = data;
+    const { title, cta_button_text, cta_button_link } = data;
 
     return (
         <header className="sm:flex sm:justify-between py-3 px-4 border-b">
@@ -24,7 +27,9 @@ const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
                         </Link>
                     </div>
                     <div className="flex space-x-3">
-                        <Button>{cta_button_text}</Button>
+                        <Link href={cta_button_link.url} target="_blank" className={buttonVariants({ variant: "outline" })}>
+                            {cta_button_text}
+                        </Link>
                         <LangSwitcher />
                     </div>
                 </div>

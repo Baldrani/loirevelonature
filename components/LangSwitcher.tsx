@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
@@ -29,17 +27,13 @@ const LangSwitcher: React.FC = () => {
     return (
         <div className="flex items-center justify-center">
             <div className="relative text-lg w-48">
-                <Button
-                    // className=" justify-between w-full border border-gray-500 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    onClick={() => setIsOptionsExpanded(!isOptionsExpanded)}
-                    onBlur={() => setIsOptionsExpanded(false)}
-                >
+                <Button variant="outline" onClick={() => setIsOptionsExpanded(!isOptionsExpanded)} onBlur={() => setIsOptionsExpanded(false)}>
                     Select Language
                     <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        className={`h-4 w-4 transform transition-transform duration-200 ease-in-out ${isOptionsExpanded ? "rotate-180" : "rotate-0"}`}
+                        className={`h-4 w-4 transform transition-transform duration-200 ease-in-out ml-1 ${isOptionsExpanded ? "rotate-180" : "rotate-0"}`}
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
