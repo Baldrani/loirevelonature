@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto, Libre_Franklin, Arimo } from "next/font/google";
 import "../globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
     return (
         <html lang="fr">
             <body className={`${roboto.className} ${libre_franklin.className} ${inter.className} ${arimo.className}`}>{children}</body>
+            <Script defer src="https://analytics.eu.umami.is/script.js" data-website-id="77e3aaa7-51e9-4f15-9738-42b34069b9bc" />
         </html>
     );
 }
