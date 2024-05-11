@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 
-let locales = ["en", "fr"];
+const locales = process.env.NEXT_PUBLIC_LOCALES.split(",");
+
+const DEFAULT_LOCALE = "fr";
 
 function getLocale() {
-    return "fr";
+    return DEFAULT_LOCALE;
 }
 
 export function middleware(request) {

@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Container from "./ui/container";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import useGetLocale from "@/app/hooks/useGetLocale";
 
 type THeroSection = {
     title: string;
@@ -22,6 +25,8 @@ type THeroSection = {
 const Hero: React.FC<{ data: THeroSection; loire_map_section: any }> = ({ data, loire_map_section }) => {
     const { title, description, cta_1_button_text, cta_1_button_link, cta_2_button_text, cta_2_button_link, picture } = data;
 
+    const locale = useGetLocale();
+
     return (
         <div>
             <div className="bg-no-repeat bg-cover bg-center bg-fixed bg-parallax-50% h-[50vh] flex items-center" style={{ backgroundImage: `url(${picture.filename})` }}>
@@ -35,11 +40,7 @@ const Hero: React.FC<{ data: THeroSection; loire_map_section: any }> = ({ data, 
                                 <Link target="_blank" href={cta_1_button_link.url} className={`${buttonVariants({ variant: "blue", size: "lg" })} flex-1`}>
                                     {cta_1_button_text}
                                 </Link>
-                                <Link
-                                    target="_blank"
-                                    href={`/${cta_2_button_link.url}`}
-                                    className={`${buttonVariants({ variant: "outline", size: "lg" })} flex-1 bg-white/10 text-white`}
-                                >
+                                <Link href={`/${locale}${cta_2_button_link.url}`} className={`${buttonVariants({ variant: "outline", size: "lg" })} flex-1 bg-white/10 text-white`}>
                                     {cta_2_button_text}
                                 </Link>
                             </div>
