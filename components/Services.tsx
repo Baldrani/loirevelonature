@@ -41,7 +41,7 @@ const ServiceCard: React.FC<{ data: any }> = ({ data }) => {
             <CardContent>{description}</CardContent>
             <CardFooter>
                 {cta_button_link && cta_button_text && (
-                    <Link className="mr-2 text-5xl font-extrabold" href={cta_button_link}>
+                    <Link className="mr-2 text-5xl font-extrabold" href={cta_button_link.url}>
                         <Button className="flex justify-center my-8" variant="blue">
                             {cta_button_text}
                         </Button>
