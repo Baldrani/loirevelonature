@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const locales = process.env.NEXT_PUBLIC_LOCALES.split(",");
+const locales = process.env.NEXT_PUBLIC_LOCALES?.split(",");
 
 const DEFAULT_LOCALE = "fr";
 
