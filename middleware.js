@@ -24,7 +24,7 @@ export function middleware(request) {
 export const config = {
     matcher: [
         // Skip all internal paths (_next)
-        "/((?!api|_next/static|_next/image|favicon.ico|.*\\.aac).*)",
+        "/((?!api|_next/static|_next/image|favicon.ico|.*\\.aac|.*\\.webp).*)",
         // Optional: only run on root (/) URL
         // '/'
     ],

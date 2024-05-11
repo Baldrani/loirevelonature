@@ -5,6 +5,7 @@ import { FC } from "react";
 import LangSwitcher from "./LangSwitcher";
 import Container from "./ui/container";
 import { buttonVariants } from "@/components/ui/button";
+import Image from "next/image";
 
 type TNavSection = {
     title: string;
@@ -22,8 +23,9 @@ const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
             <Container>
                 <div className="relative px-4 sm:px6 lg:px-8 flex h-16 items-center justify-between w-full">
                     <div className="flex items-center">
-                        <Link href="/" className="ml-4 lg:ml-0">
-                            <h1 className="text-xl">{title}</h1>
+                        <Link href="/" className="ml-4 lg:ml-0 flex items-center">
+                            <Image src="/logo.webp" width="70" height="70" alt={`Logo ${title}`} />
+                            <h1 className="text-xl font-">{title}</h1>
                         </Link>
                     </div>
                     <div className="flex space-x-3">
