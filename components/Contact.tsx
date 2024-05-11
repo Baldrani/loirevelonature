@@ -1,21 +1,30 @@
+import { ContactForm } from "./ContactForm";
 import Container from "./ui/container";
 
 const ContactSection: React.FC<{ data: any }> = ({ data }) => {
-    const { title, description, email, phone, location } = data;
+    const { title, email, phonenumber, addresse } = data;
     return (
         <Container>
-            <div className="text-xl" id="contact">
-                <h2 className="text-4xl font-bold text-center mb-8">{title}</h2>
-                <p className="pb-8">{description}</p>
-                <span className="block mb-2">
-                    <EmailIcon /> {email}
-                </span>
-                <span className="block mb-2">
-                    <PhoneIcon /> {phone}
-                </span>
-                <span className="block mb-2">
-                    <LocationIcon /> {location}
-                </span>
+            <div className="pt-6" id="contact">
+                <h3 className="text-4xl font-bold text-center mb-8">{title}</h3>
+                {/* <ContactForm /> */}
+                <div className="grid grid-cols-3 text-center gap-2 my-3">
+                    <span className="block mb-2 text-sm">
+                        <EmailIcon />
+                        <br />
+                        {email}
+                    </span>
+                    <span className="block mb-2 text-sm">
+                        <PhoneIcon />
+                        <br />
+                        {phonenumber}
+                    </span>
+                    <span className="block mb-2 text-sm">
+                        <LocationIcon />
+                        <br />
+                        {addresse}
+                    </span>
+                </div>
             </div>
         </Container>
     );
