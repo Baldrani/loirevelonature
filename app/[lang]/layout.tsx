@@ -25,15 +25,30 @@ export const metadata: Metadata = {
     authors: [{ name: "Maël Mayon", url: "https://github.com/Baldrani" }],
     viewport: "width=device-width, initial-scale=1.0",
     robots: "index, follow",
+    openGraph: {
+        title: "Location de Vélos en Loire - Découvrez la Vallée de la Loire à Vélo",
+        description:
+            "Profitez d'une expérience unique avec nos locations de vélos sur la Loire. Parfait pour explorer les châteaux et les paysages époustouflants de la Vallée de la Loire. Idéal pour les familles, groupes, et cyclistes solo.",
+        type: "website",
+        url: "https://loirevelonature.vercel.app/fr",
+        // images: "https://www.vélosloire.com/og-image.jpg", // Assuming an Open Graph image URL
+    },
+    // apple_touch_icon: "/icons/apple-touch-icon.png", // Path to apple touch icon
+    // icons: "/icons/favicon.ico", // Path to favicon
+    // manifest: "/manifest.json", // Path to manifest file
+    // alternates: { canonical: "https://example.com", hreflang: { "en-US": "https://example.com/en-US" } },
+    // { canonical: "https://example.com", hreflang: { en: "https://www.vélosloire.com/en", es: "https://www.vélosloire.com/es" } }
 };
 
 export default function RootLayout({
     children,
+    params: { lang },
 }: Readonly<{
     children: React.ReactNode;
+    params: { lang: string };
 }>) {
     return (
-        <html lang="fr" className="scroll-smooth">
+        <html lang={lang} className="scroll-smooth">
             <body className={`${roboto.className} ${libre_franklin.className} ${inter.className} ${arimo.className}`}>{children}</body>
             <Script defer src="https://analytics.eu.umami.is/script.js" data-website-id="77e3aaa7-51e9-4f15-9738-42b34069b9bc" />
         </html>
