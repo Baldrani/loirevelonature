@@ -1,5 +1,6 @@
-import { ContactForm } from "./ContactForm";
+import ContactForm from "./ContactForm";
 import Container from "./ui/container";
+import { Separator } from "./ui/separator";
 
 const ContactSection: React.FC<{ data: any }> = ({ data }) => {
     const { title, email, phonenumber, addresse } = data;
@@ -8,6 +9,7 @@ const ContactSection: React.FC<{ data: any }> = ({ data }) => {
             <div className="pt-6" id="contact">
                 <h3 className="text-4xl font-bold text-center mb-8">{title}</h3>
                 {/* <ContactForm /> */}
+                <Separator className="my-8" />
                 <div className="grid grid-cols-3 text-center gap-2 my-3">
                     <span className="block mb-2 text-sm">
                         <EmailIcon />

@@ -1,120 +1,71 @@
 "use client";
-
-import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 import { Textarea } from "./ui/textarea";
-import Container from "./ui/container";
 
-const formSchema = z
-    .object({
-        name: z.string(),
-        email: z.string().email({
-            message: "Please enter a valid email address.",
-        }),
-        message: z.string(),
-    })
-    .required();
+const formSchema = z.object({
+    email: z.string().email(),
+    message: z.string(),
+});
 
-export function ContactForm() {
-    const {
-        handleSubmit,
-        control,
-        trigger,
-        formState: { errors, isValid },
-    } = useForm<z.infer<typeof formSchema>>({
+export default function ContactForm() {
+    const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: "",
             email: "",
             message: "",
         },
     });
 
-    // 2. Define a submit handler.
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values);
+    const handleSubmit = (values: z.infer<typeof formSchema>) => {
+        fetch("/api/email", {
+            method: "POST",
+            body: JSON.stringify(values),
+        });
     };
-
-    const handleOnChangeText = (value: string, onChange: (...event: string[]) => void) => {
-        onChange(value);
-        trigger();
-    };
-
-    console.log(errors);
-    function TextFieldError({ error }: { error?: string }) {
-        return error ? (
-            <div
-                style={{
-                    color: "red",
-                    position: "absolute",
-                    top: "-16px",
-                    fontSize: "0.8em",
-                }}
-            >
-                {error}
-            </div>
-        ) : null;
-    }
 
     return (
-        <Container>
-            <form>
-                <div className="grid w-10/12 gap-2 m-auto">
-                    <FormField
-                        control={control}
-                        name="name"
-                        render={({ field: { onChange, onBlur, value } }) => (
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(handleSubmit)} className="max-w-md w-full flex flex-col gap-4 m-auto">
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => {
+                        return (
                             <FormItem>
+                                <FormLabel>Email address</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Name" onBlur={onBlur} onChange={e => handleOnChangeText(e.target.value, onChange)} value={value} />
+                                    <Input placeholder="Email address" type="email" {...field} />
                                 </FormControl>
-                                {errors.name && <TextFieldError error={errors.name.message} />}
-
-                                {/* <FormDescription>This is your public display name.</FormDescription> */}
+                                <FormMessage />
                             </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={control}
-                        name="email"
-                        render={({ field: { onChange, onBlur, value } }) => (
+                        );
+                    }}
+                />
+                <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => {
+                        return (
                             <FormItem>
+                                <FormLabel>Message</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Email" onBlur={onBlur} onChange={e => handleOnChangeText(e.target.value, onChange)} value={value} />
+                                    <Textarea placeholder="Votre message" {...field} />
                                 </FormControl>
-                                {errors.email && <FormMessage>{errors.email.message}</FormMessage>}
-
-                                <FormDescription>This is your public display name.</FormDescription>
+                                <FormMessage />
                             </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={control}
-                        name="message"
-                        render={({ field: { onChange, onBlur, value } }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <Textarea placeholder="Type your message here." onBlur={onBlur} onChange={e => handleOnChangeText(e.target.value, onChange)} value={value} />
-                                    <Input placeholder="Email" />
-                                </FormControl>
-                                {errors.message && <FormMessage>{errors.message.message}</FormMessage>}
-
-                                <FormDescription>This is your public display name.</FormDescription>
-                            </FormItem>
-                        )}
-                    />
-
-                    <Button disabled={isValid ? false : true} onClick={handleSubmit(onSubmit)}>
-                        Send message
-                    </Button>
-                </div>
+                        );
+                    }}
+                />
+                <Button type="submit" className="w-full">
+                    Submit
+                </Button>
             </form>
-        </Container>
+        </Form>
     );
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Roboto, Libre_Franklin, Arimo } from "next/font/google";
 import "../globals.css";
 import Script from "next/script";
@@ -38,6 +38,12 @@ export const metadata: Metadata = {
     // manifest: "/manifest.json", // Path to manifest file
     // alternates: { canonical: "https://example.com", hreflang: { "en-US": "https://example.com/en-US" } },
     // { canonical: "https://example.com", hreflang: { en: "https://www.vélosloire.com/en", es: "https://www.vélosloire.com/es" } }
+};
+
+export const viewport: Viewport = {
+    themeColor: "#4d9dec",
+    initialScale: 1,
+    width: "device-width",
 };
 
 export default function RootLayout({
