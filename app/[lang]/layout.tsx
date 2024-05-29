@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Roboto, Libre_Franklin, Arimo } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "../globals.css";
@@ -59,6 +60,7 @@ export default function RootLayout({
         <html lang={lang} className="scroll-smooth">
             <body className={`${roboto.className} ${libre_franklin.className} ${inter.className} ${arimo.className}`}>{children}</body>
             <SpeedInsights />
+            <Analytics />
             <Script defer src="https://analytics.eu.umami.is/script.js" data-website-id="77e3aaa7-51e9-4f15-9738-42b34069b9bc" />
         </html>
     );
