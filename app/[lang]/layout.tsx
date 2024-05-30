@@ -34,7 +34,7 @@ export const metadata: Metadata = {
             "Profitez d'une expérience unique avec nos locations de vélos sur la Loire. Parfait pour explorer les châteaux et les paysages époustouflants de la Vallée de la Loire. Idéal pour les familles, groupes, et cyclistes solo.",
         type: "website",
         url: "https://loirevelonature.info",
-        // images: "https://www.vélosloire.com/og-image.jpg", // Assuming an Open Graph image URL
+        images: "https://a.storyblok.com/f/283779/1599x900/9d66754460/sebastien-gaudard-37635.jpg", // Assuming an Open Graph image URL
     },
     // apple_touch_icon: "/icons/apple-touch-icon.png", // Path to apple touch icon
     // icons: "/icons/favicon.ico", // Path to favicon
