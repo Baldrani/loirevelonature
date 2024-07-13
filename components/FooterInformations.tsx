@@ -26,12 +26,16 @@ const FooterInformations: React.FC = () => {
                     <div className="flex items-center gap-0.5 text-sm">
                         {/* @ts-ignore */}
                         <PhoneIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                        <p className="text-sm">+33 (0)6 03 89 23 14</p>
+                        <p className="text-sm">
+                            <a href="tel:+33503892314">+33 (0)6 03 89 23 14</a>
+                        </p>
                     </div>
                     <div className="flex items-center gap-0.5 text-sm">
                         {/* @ts-ignore */}
                         <LocateIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                        <p className="text-sm">3 avenue du 11 Novembre, 37130 BREHEMONT</p>
+                        <p className="text-sm">
+                            <a href="https://maps.app.goo.gl/oVJ8Shk1Utmd3w6T8">3 avenue du 11 Novembre, 37130 BREHEMONT</a>
+                        </p>
                     </div>
                 </div>
                 <nav className="grid gap-4 md:justify-self-end lg:grid-cols-[repeat(4)] text-sm">
@@ -64,6 +68,29 @@ const FooterInformations: React.FC = () => {
                         <Link className="underline underline-offset-2" href="#">
                             FAQ
                         </Link>
+                    </div>
+                    <div className="w-10">
+                        <a href="https://www.facebook.com/profile.php?id=100063615400006">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    {" "}
+                                    <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7208)"></circle>{" "}
+                                    <path
+                                        d="M21.2137 20.2816L21.8356 16.3301H17.9452V13.767C17.9452 12.6857 18.4877 11.6311 20.2302 11.6311H22V8.26699C22 8.26699 20.3945 8 18.8603 8C15.6548 8 13.5617 9.89294 13.5617 13.3184V16.3301H10V20.2816H13.5617V29.8345C14.2767 29.944 15.0082 30 15.7534 30C16.4986 30 17.2302 29.944 17.9452 29.8345V20.2816H21.2137Z"
+                                        fill="white"
+                                    ></path>{" "}
+                                    <defs>
+                                        {" "}
+                                        <linearGradient id="paint0_linear_87_7208" x1="16" y1="2" x2="16" y2="29.917" gradientUnits="userSpaceOnUse">
+                                            {" "}
+                                            <stop stop-color="#18ACFE"></stop> <stop offset="1" stop-color="#0163E0"></stop>{" "}
+                                        </linearGradient>{" "}
+                                    </defs>{" "}
+                                </g>
+                            </svg>
+                        </a>
                     </div>
                 </nav>
             </div>

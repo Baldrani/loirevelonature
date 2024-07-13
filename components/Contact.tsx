@@ -3,7 +3,8 @@ import Container from "./ui/container";
 import { Separator } from "./ui/separator";
 
 const ContactSection: React.FC<{ data: any }> = ({ data }) => {
-    const { title, email, phonenumber, addresse } = data;
+    const { title, email, phonenumber, addresse, googlemap_link, phonenumber_link } = data;
+    console.log(data);
     return (
         <Container>
             <div className="pt-6" id="contact">
@@ -14,17 +15,17 @@ const ContactSection: React.FC<{ data: any }> = ({ data }) => {
                     <span className="block mb-2 text-sm">
                         <EmailIcon />
                         <br />
-                        {email}
+                        <a href={`mailto:${email}`}>{email}</a>
                     </span>
                     <span className="block mb-2 text-sm">
                         <PhoneIcon />
                         <br />
-                        {phonenumber}
+                        <a href={`tel:${phonenumber_link || phonenumber}`}>{phonenumber}</a>
                     </span>
                     <span className="block mb-2 text-sm">
                         <LocationIcon />
                         <br />
-                        {addresse}
+                        <a href={googlemap_link}>{addresse}</a>
                     </span>
                 </div>
             </div>
