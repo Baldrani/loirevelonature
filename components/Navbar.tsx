@@ -25,7 +25,7 @@ const Navbar: FC<{ data: TNavSection }> = ({ data }) => {
                     <div className="flex items-center">
                         <Link href="/" className="ml-4 lg:ml-0 flex items-center">
                             <Image src="/logo.webp" width="70" height="70" alt={`Logo ${title}`} />
-                            <h1 className="text-xl font-">{title}</h1>
+                            <p className="text-xl font-">{title}</p>
                         </Link>
                     </div>
                     <div className="flex space-x-3">
