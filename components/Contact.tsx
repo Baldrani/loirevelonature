@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator";
 
 const ContactSection: React.FC<{ data: any }> = ({ data }) => {
     const { title, email, phonenumber, addresse, googlemap_link, phonenumber_link } = data;
-    console.log(data);
+
     return (
         <Container>
             <div className="pt-6" id="contact">

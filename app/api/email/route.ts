@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
     const data = await request.json();
-    console.log(data);
 
     const res = await fetch("https://api.resend.com/emails", {
         method: "POST",

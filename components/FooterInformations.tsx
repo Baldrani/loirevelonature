@@ -72,8 +72,8 @@ const FooterInformations: React.FC = () => {
                     <div className="w-10">
                         <a href="https://www.facebook.com/profile.php?id=100063615400006">
                             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
                                     {" "}
                                     <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7208)"></circle>{" "}
@@ -85,7 +85,7 @@ const FooterInformations: React.FC = () => {
                                         {" "}
                                         <linearGradient id="paint0_linear_87_7208" x1="16" y1="2" x2="16" y2="29.917" gradientUnits="userSpaceOnUse">
                                             {" "}
-                                            <stop stop-color="#18ACFE"></stop> <stop offset="1" stop-color="#0163E0"></stop>{" "}
+                                            <stop stopColor="#18ACFE"></stop> <stop offset="1" stopColor="#0163E0"></stop>{" "}
                                         </linearGradient>{" "}
                                     </defs>{" "}
                                 </g>
