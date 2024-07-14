@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 import Image from "next/image";
 import Link from "next/link";
+import notFound from "../public/images/not-found.png";
 
 const getLandingPage = async (lang: string) => {
     const version = process.env.SB_DATA_VERSION;
@@ -26,7 +27,7 @@ export default async function Home() {
         <main>
             <Navbar data={nav_section} />
             <div className="w-full flex flex-col items-center mt-9">
-                <Image src="/images/not-found.png" width="70" height="70" alt="404 Image" />
+                <Image src={notFound} alt="404 Image" />
                 <Link href="/" className={buttonVariants({ variant: "outline", size: "lg" })}>
                     Retour à l&apos;accueil
                 </Link>
